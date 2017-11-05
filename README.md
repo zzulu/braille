@@ -1,8 +1,8 @@
 # Braille
 
-Welcome to your new gem! In this directory, you'll find the files you need to be able to package up your Ruby library into a gem. Put your Ruby code in the file `lib/braille`. To experiment with that code, run `bin/console` for an interactive prompt.
+한글 점역기
 
-TODO: Delete this and the text above, and describe your gem
+Braille Translator for Korean
 
 ## Installation
 
@@ -14,25 +14,29 @@ gem 'braille'
 
 And then execute:
 
-    $ bundle
+```console
+$ bundle
+```
 
 Or install it yourself as:
 
-    $ gem install braille
+```console
+$ gem install braille
+```
 
 ## Usage
 
-TODO: Write usage instructions here
+```ruby
+require 'braille'
 
-## Development
+Braille::Ko.translate('저는 줄루입니다') #=> '⠨⠎⠉⠵ ⠨⠯⠐⠍⠕⠃⠉⠕⠊'
+```
 
-After checking out the repo, run `bin/setup` to install dependencies. Then, run `rake spec` to run the tests. You can also run `bin/console` for an interactive prompt that will allow you to experiment.
-
-To install this gem onto your local machine, run `bundle exec rake install`. To release a new version, update the version number in `version.rb`, and then run `bundle exec rake release`, which will create a git tag for the version, push git commits and tags, and push the `.gem` file to [rubygems.org](https://rubygems.org).
+'한국 점자 규정'에 따른 점역 예외 상황들에 대한 대응이 완벽하지 않습니다. 오역이 가능성이 존재하며, 정확한 점역을 위해서는 [국립국어원 한국 점자 규정](http://www.korean.go.kr/front/etcData/etcDataView.do?etc_seq=542&mn_id=46)을 참고해 주시기 바랍니다.
 
 ## Contributing
 
-Bug reports and pull requests are welcome on GitHub at https://github.com/[USERNAME]/braille. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
+Bug reports and pull requests are welcome on GitHub at https://github.com/capollux/braille. This project is intended to be a safe, welcoming space for collaboration, and contributors are expected to adhere to the [Contributor Covenant](http://contributor-covenant.org) code of conduct.
 
 ## License
 
