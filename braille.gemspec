@@ -10,7 +10,7 @@ Gem::Specification.new do |spec|
   spec.email         = ["capollux10@gmail.com"]
 
   spec.summary       = "Braille Translator"
-  spec.homepage      = "https://github.com/capollux/braille"
+  spec.homepage      = "https://github.com/zzulu/braille"
   spec.license       = "MIT"
 
   # Prevent pushing this gem to RubyGems.org. To allow pushes either set the 'allowed_push_host'
