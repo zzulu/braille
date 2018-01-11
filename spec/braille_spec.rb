@@ -57,7 +57,7 @@ RSpec.describe Braille::Ko::Jaso do
 end  
 
 RSpec.describe Braille::Ko::Word do
-  describe '#translated' do
+  describe '#translate' do
     it 'return "⠨⠎⠐⠕⠫" if "저리가"' do
       result = Braille::Ko::Word.new('저리가').translate
       expect(result).to eq("⠨⠎⠐⠕⠫")
@@ -73,6 +73,16 @@ RSpec.describe Braille::Ko::Word do
     it 'return "⠁⠥" if "그리고"' do
       result = Braille::Ko::Word.new('그리고').translate
       expect(result).to eq("⠁⠥")
+    end
+
+    it 'return "⠁⠎⠟⠨⠕" if "그래서인지"' do
+      result = Braille::Ko::Word.new('그래서인지').translate
+      expect(result).to eq("⠁⠎⠟⠨⠕")
+    end
+
+    it 'return "⠠⠨⠍⠈⠪⠐⠕⠈⠥" if "쭈그리고"' do
+      result = Braille::Ko::Word.new('쭈그리고').translate
+      expect(result).to eq("⠠⠨⠍⠈⠪⠐⠕⠈⠥")
     end
   end
 end
