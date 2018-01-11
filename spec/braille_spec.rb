@@ -74,6 +74,16 @@ RSpec.describe Braille::Ko::Word do
       result = Braille::Ko::Word.new('그리고').translate
       expect(result).to eq("⠁⠥")
     end
+
+    it 'return "⠁⠎⠟⠨⠕" if "그래서인지"' do
+      result = Braille::Ko::Word.new('그래서인지').translate
+      expect(result).to eq("⠁⠎⠟⠨⠕")
+    end
+
+    it 'return "⠠⠨⠍⠈⠪⠐⠕⠈⠥" if "쭈그리고"' do
+      result = Braille::Ko::Word.new('쭈그리고').translate
+      expect(result).to eq("⠠⠨⠍⠈⠪⠐⠕⠈⠥")
+    end
   end
 end
 

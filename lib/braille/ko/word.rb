@@ -1,4 +1,4 @@
-#encoding: utf-8
+#encoding: UTF-8
 module Braille
   module Ko
     class Word
@@ -9,12 +9,12 @@ module Braille
       end
 
       def translate
-        if GROUPS.has_key?(@word)
-          GROUPS[@word]
+        if group_arr = GROUPS.detect{|k, v| @word.start_with?(k)} # return Array. ex) ["그래서", "⠁⠎"]
+          syllables = @word.delete(group_arr.shift).scan(/[가-힣]/)
         else
           syllables = @word.scan(/[가-힣]/)
-          syllables.map {|s| Jaso.new(s).translate }.join('')
         end
+        syllables.map{|s| Jaso.new(s).translate }.unshift(*group_arr).join('')
       end
 
     end
